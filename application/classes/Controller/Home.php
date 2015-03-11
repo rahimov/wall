@@ -50,7 +50,7 @@ class Controller_Home extends Controller_Template
         }
 
         $messages = ORM::factory('Post')->order_by('id', 'desc')->find_all();
-        $this->template->title = __('Posts wall') . ' ' . __('sitesoft');
+        $this->template->title = __('Posts wall') . ' ' . __('Sitesoft');
         $this->template->content = View::factory('index')
             ->bind('errors', $errors)
             ->bind('messages', $messages);

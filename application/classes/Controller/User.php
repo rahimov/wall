@@ -6,7 +6,7 @@ class Controller_User extends Controller_Template
 
     public function action_login()
     {
-        $this->template->title = __('Auth') . ' ' . __('sitesoft');
+        $this->template->title = __('Auth') . ' ' . __('Sitesoft');
 
         $errors = array();
         if ($post = $this->request->post()) {
@@ -85,7 +85,7 @@ class Controller_User extends Controller_Template
 
         }
 
-        $this->template->title = __('Registration') . ' ' . __('sitesoft');
+        $this->template->title = __('Registration') . ' ' . __('Sitesoft');
         $this->template->content = View::factory('User/registration')
             ->bind('post', $post)
             ->bind('errors', $errors);
@@ -93,7 +93,7 @@ class Controller_User extends Controller_Template
 
     public function action_success()
     {
-        $this->template->title = __('Registration success') . ' ' . __('sitesoft');
+        $this->template->title = __('Registration success') . ' ' . __('Sitesoft');
         $this->template->content = View::factory('User/success');
     }
 
