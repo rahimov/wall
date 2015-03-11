@@ -6,6 +6,10 @@ class Controller_User extends Controller_Template
 
     public function action_login()
     {
+        if(Auth::instance()->logged_in()){
+            return $this->redirect(URL::base(true));
+        }
+
         $this->template->title = __('Auth') . ' ' . __('Sitesoft');
 
         $errors = array();
@@ -36,6 +40,9 @@ class Controller_User extends Controller_Template
 
     public function action_registration()
     {
+        if(Auth::instance()->logged_in()){
+            return $this->redirect(URL::base(true));
+        }
         $errors = array();
 
         if ($post = $this->request->post()) {
@@ -93,6 +100,10 @@ class Controller_User extends Controller_Template
 
     public function action_success()
     {
+        if(Auth::instance()->logged_in()){
+            return $this->redirect(URL::base(true));
+        }
+
         $this->template->title = __('Registration success') . ' ' . __('Sitesoft');
         $this->template->content = View::factory('User/success');
     }
